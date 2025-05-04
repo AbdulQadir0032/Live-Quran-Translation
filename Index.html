@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quran Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Sidebar (Surah List) -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-book-quran"></i> Surahs</h2>
+        <div class="search-box">
+          <input type="text" placeholder="Search surah..." id="search-surah">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+      <div class="surah-list" id="surah-list">
+        <!-- Dynamically loaded -->
+      </div>
+    </div>
+
+    <!-- Right Main Content -->
+    <div class="main-content">
+      <div class="verse-controls">
+        
+        <div class="verse-navigator">
+          <button id="prev-verse"><i class="fas fa-chevron-left"></i></button>
+          <span id="verse-ref">Surah Al-Fatiha:1</span>
+          <button id="next-verse"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="translation-select">
+          <select id="translation-select">
+            <option value="en">English (Sahih)</option>
+            <option value="ur">Urdu</option>
+            <option value="fr">French</option>
+          </select>
+        </div>
+        <button id="theme-toggle" class="icon-button" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        <button id="mic-button" class="icon-button">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <span id="speech-status" class="hidden"><i class="fas fa-circle-notch fa-spin"></i> Listening...</span>
+      </div>
+
+      <!-- Verse Display -->
+      <div class="verse-display">
+        <div class="verse-section arabic-section">
+          <div class="verse-text" id="arabic-verse">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        </div>
+        <div class="verse-section transliteration-section">
+          <div class="verse-text" id="transliteration">Bismi Allahi ar-Raḥmāni ar-Raḥīm</div>
+        </div>
+        <div class="verse-section translation-section">
+          <div class="verse-text" id="translation">In the name of Allah, the Entirely Merciful, the Especially Merciful.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
