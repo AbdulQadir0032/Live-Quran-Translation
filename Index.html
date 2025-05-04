@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Left Sidebar (Surah List) -->
+    <!-- Left Sidebar -->
     <div class="sidebar">
       <div class="sidebar-header">
         <h2><i class="fas fa-book-quran"></i> Surahs</h2>
@@ -19,46 +19,48 @@
           <i class="fas fa-search"></i>
         </div>
       </div>
-      <div class="surah-list" id="surah-list">
-        <!-- Dynamically loaded -->
-      </div>
+      <div class="surah-list" id="surah-list"></div>
     </div>
 
     <!-- Right Main Content -->
     <div class="main-content">
       <div class="verse-controls">
-        
+        <button id="audio-button" class="icon-button" title="Play Audio">
+            <i class="fas fa-play"></i>
+          </button>
         <div class="verse-navigator">
           <button id="prev-verse"><i class="fas fa-chevron-left"></i></button>
-          <span id="verse-ref">Surah Al-Fatiha:1</span>
+          <span id="verse-ref">Loading...</span>
           <button id="next-verse"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="translation-select">
           <select id="translation-select">
-            <option value="en">English (Sahih)</option>
-            <option value="ur">Urdu</option>
-            <option value="fr">French</option>
+            <option value="en.sahih">English (Sahih)</option>
+            <option value="ur.maududi">Urdu (Maududi)</option>
           </select>
         </div>
         <button id="theme-toggle" class="icon-button" title="Toggle Dark Mode">
-            <i class="fas fa-moon"></i>
-          </button>
-        <button id="mic-button" class="icon-button">
-          <i class="fas fa-microphone"></i>
+          <i class="fas fa-moon"></i>
         </button>
-        <span id="speech-status" class="hidden"><i class="fas fa-circle-notch fa-spin"></i> Listening...</span>
       </div>
 
-      <!-- Verse Display -->
       <div class="verse-display">
+        <div class="word-analysis">
+            <h3>Word-by-Word Analysis</h3>
+            <div id="word-breakdown"></div>
+          </div>
+          <div id="mic-permission" class="hidden">
+            <p>Microphone access is required for voice commands.</p>
+            <button id="enable-mic">Enable Microphone</button>
+          </div>
         <div class="verse-section arabic-section">
-          <div class="verse-text" id="arabic-verse">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <div class="verse-text" id="arabic-verse">Loading...</div>
         </div>
         <div class="verse-section transliteration-section">
-          <div class="verse-text" id="transliteration">Bismi Allahi ar-Raḥmāni ar-Raḥīm</div>
+          <div class="verse-text" id="transliteration">Loading...</div>
         </div>
         <div class="verse-section translation-section">
-          <div class="verse-text" id="translation">In the name of Allah, the Entirely Merciful, the Especially Merciful.</div>
+          <div class="verse-text" id="translation">Loading...</div>
         </div>
       </div>
     </div>
